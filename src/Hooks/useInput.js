@@ -3,11 +3,12 @@ import { useState } from "react";
 export default (defaultValue) => {
     const [value, setValue] = useState(defaultValue);
 
-    onChange = (e) => {
+    const onChange = (e) => {
         const {
             target: { value }
         } = e;
+        setValue(value);
     };
 
-    return { value };
+    return { value, onChange };
 }
